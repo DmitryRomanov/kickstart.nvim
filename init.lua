@@ -124,6 +124,11 @@ vim.opt.undofile = true
 -- Case-insensitive searching UNLESS \C or one or more capital letters in the search term
 vim.opt.ignorecase = true
 vim.opt.smartcase = true
+vim.opt.smarttab = true
+vim.opt.expandtab = true
+vim.opt.tabstop = 2
+vim.opt.shiftwidth = 2
+vim.opt.softtabstop = 2
 
 -- Keep signcolumn on by default
 vim.opt.signcolumn = 'yes'
@@ -291,6 +296,15 @@ require('lazy').setup({
         { '<leader>w', group = '[W]orkspace' },
         { '<leader>t', group = '[T]oggle' },
         { '<leader>h', group = 'Git [H]unk', mode = { 'n', 'v' } },
+      }
+    end,
+  },
+  {
+    'Wansmer/langmapper.nvim',
+    lazy = false,
+    priority = 1, -- High priority is needed if you will use `autoremap()`
+    config = function()
+      require('langmapper').setup {--[[ your config ]]
       }
     end,
   },
